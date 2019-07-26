@@ -23,7 +23,7 @@ class IpSubscriptionsPlugin extends GenericPlugin {
     if ($success && $this->getEnabled($mainContextId)) {
       $this->import('IpSubscriptionsDAO');
       $ipDao = new IpSubscriptionsDAO();
-      $returner =& DAORegistry::registerDAO('IpSubscriptionsDAO', $ipDao);
+      $returner = DAORegistry::registerDAO('IpSubscriptionsDAO', $ipDao);
 
       // Grant / deny access based on subscriber IP address
       HookRegistry::register('IssueAction::subscriptionRequired', [$this, 'validSubscriptionIp']);
